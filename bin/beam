@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+if (file_exists(__DIR__ . '/../../../autoload.php')) {
+    require_once __DIR__ . '/../../../autoload.php';
+} else if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+}
+
+use Beam\BeamCore\Commands\CheckCommand;
+use Beam\BeamCore\Commands\InitCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application('Beam Core', 'v2.0.0');
+$application->add(new InitCommand());
+$application->add(new CheckCommand());
+$application->run();

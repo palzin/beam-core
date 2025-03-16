@@ -1,0 +1,63 @@
+{
+    "name": "palzin/beam-core",
+    "description": "Beam is a friendly app designed to boost your Laravel / PHP coding and debugging experience.",
+    "homepage": "https://github.com/palzin/beam-core",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [{
+        "name": "Luan Freitas",
+        "email": "luanfreitas10@protonmail.com",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": "^8.1",
+        "ext-curl": "*",
+        "ramsey/uuid": "^4.7.5",
+        "symfony/var-dumper": "^5.4|^6.4|^7.0",
+        "symfony/console": "^5.4|^6.4|^7.0",
+        "symfony/process": "^5.4|^6.4|^7.0",
+        "symfony/finder": "^5.4|^6.4|^7.0",
+        "symfony/yaml": "^5.4|^6.4|^7.0",
+        "nunomaduro/termwind": "^1.15|^2.0",
+        "spatie/backtrace": "^1.5"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.13.7",
+        "pestphp/pest": "^2.28.1",
+        "phpstan/phpstan": "^1.10.50",
+        "illuminate/support": "^10.46"
+    },
+    "autoload": {
+        "psr-4": {
+            "Beam\\BeamCore\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Beam\\BeamCore\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test:pint": "./vendor/bin/pint --test",
+        "pint:fix": "./vendor/bin/pint",
+        "test:types": "./vendor/bin/phpstan analyse --ansi --memory-limit=-1",
+        "test:tests": "./vendor/bin/pest --order-by random",
+        "verify": [
+            "@cs-fixer",
+            "@test:types",
+            "@test:tests"
+        ]
+    },
+    "bin": [
+        "bin/beam"
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
