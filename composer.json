@@ -6,8 +6,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "authors": [{
-        "name": "Luan Freitas",
-        "email": "luanfreitas10@protonmail.com",
+        "name": "Palzin Team",
+        "email": "hello@palzin.com",
         "role": "Developer"
     }],
     "require": {
